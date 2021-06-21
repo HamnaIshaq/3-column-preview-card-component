@@ -1,0 +1,136 @@
+/*Global styling*/
+
+*{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: var(--veryLightGray);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+}
+
+:root{
+    --veryLightGray: hsl(0, 0%, 95%); /* (background, headings, buttons)*/
+    --transparentWhite: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+    --brightOrange: hsl(31, 77%, 52%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+    --marginY: 5.4375em; /*87px;*/
+    --marginX: 1.5em;/*24px*/
+    --paddingTop: 2.9375em;/*47px;*/ 
+    --paddingRight: 3.125em; /*50px;*/
+    --paddingBottom: 2.9375em;/* 47px;*/
+    --paddingLeft: 2.875em;/*46px;*/
+}
+
+/*typography*/
+h2{
+    text-transform: uppercase;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--veryLightGray);
+}
+
+p{
+    color: var(--transparentWhite);
+    line-height: 1.7;
+}
+
+a{
+    text-decoration: none;
+}
+
+.sedan a{
+    color: var(--brightOrange);
+}
+
+.suvs a{
+    color: var(--darkCyan);
+}
+
+.luxury a{
+    color: var(--veryDarkCyan);
+}
+
+/*layout (mobile first)*/
+
+.container{
+    margin: var(--marginY) var(--marginX);
+}
+
+.sedan,
+.suvs,
+.luxury{
+    padding: var(--paddingTop) var(--paddingRight) var(--paddingBottom) var(--paddingLeft);
+}
+
+.sedan{
+    background-color: var(--brightOrange);
+    border-radius: 10px 10px 0 0 ;
+}
+
+a{
+    background-color: var(--veryLightGray);
+    border-radius: 40px;
+    display: block;
+    width: 60%;
+    padding: 0.9375em; /*15px */
+    margin-top: 1.6875em; /*27px*/
+    text-align: center;
+}
+
+a:hover,
+a:focus{
+    cursor: pointer;
+    color: var(--veryLightGray);
+    background-color: transparent;
+    border: 2px solid var(--transparentWhite);
+}
+
+.suvs{
+    background-color: var(--darkCyan);
+}
+
+.luxury{
+    background-color: var(--veryDarkCyan);
+    border-radius: 0 0 10px 10px;
+}
+
+/*desktop design*/
+@media (min-width: 1000px){
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        margin: auto;
+        margin-top: 8.75em; /*140px*/
+        max-width: 920px;
+    }
+
+    .sedan,
+    .suvs,
+    .luxury{
+        padding: 2.875em 3.125em 3em 2.8125em;/*46px 50px 48px 45px;*/
+    }
+    
+    .sedan{
+        border-radius: 10px 0 0 10px;
+    }
+    
+    .luxury{
+        border-radius: 0 10px 10px 0;
+    }
+
+    a{
+        margin-top: 5.3125em; /*85px;*/
+    }
+    
+}
